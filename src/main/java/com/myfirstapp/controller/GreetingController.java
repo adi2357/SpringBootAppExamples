@@ -1,7 +1,5 @@
 package com.myfirstapp.controller;
 
-import java.util.concurrent.atomic.AtomicLong;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,18 +28,18 @@ public class GreetingController {
 		User user = new User();
 		user.setFirstName(firstName);
 		user.setLastName(lastName);
-		return greetingService.addGreetingService(user);
+		return greetingService.addGreeting(user);
 	}
 
 	@PostMapping("/post")
 	public String getGreeting(@RequestBody Greeting greeting) {
-		return "{\"messageId\":" + greeting.getMessageId() + ",\"message\":" + "\""
+		return "{\"id\":" + greeting.getId() + ",\"message\":" + "\""
 				+ String.format(template, greeting.getMessage()) + "\"}";
 	}
 
-	@PutMapping("/put/{messageId}")
-	public Greeting getGreeting(@PathVariable long messageId,
+	@PutMapping("/put/{id}")
+	public Greeting getGreeting(@PathVariable long id,
 			@RequestParam(value = "name", defaultValue = "World") String name) {
-		return new Greeting(messageId, String.format(template, name));
+		return new Greeting(id, String.format(template, name));
 	}
 }

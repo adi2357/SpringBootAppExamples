@@ -1,20 +1,33 @@
 package com.myfirstapp.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "GREETINGS")
 public class Greeting {
-	long messageId;
-	String message;
-	
-	public Greeting(long messageId, String message) {
-		this.messageId = messageId;
+
+	@Id
+	private long id;
+	private String message;
+
+	public Greeting() {
+		id = 0;
+		message = "";
+	}
+
+	public Greeting(long id, String message) {
+		this.id = id;
 		this.message = message;
 	}
 
-	public long getMessageId() {
-		return messageId;
+	public long getId() {
+		return id;
 	}
 
-	public void setMessageId(long messageId) {
-		this.messageId = messageId;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getMessage() {

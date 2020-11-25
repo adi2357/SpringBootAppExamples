@@ -1,0 +1,9 @@
+2020-11-25 19:04:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "GREETINGS" not found; SQL statement:
+select greeting0_.id as id1_0_0_, greeting0_.message as message2_0_0_ from greetings greeting0_ where greeting0_.id=? [42102-200]
+2020-11-25 19:35:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "GREETINGS" not found; SQL statement:
+select greeting0_.id as id1_0_0_, greeting0_.message as message2_0_0_ from greetings greeting0_ where greeting0_.id=? [42102-200]
+2020-11-25 19:36:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "GREETINGS" not found; SQL statement:
+select greeting0_.id as id1_0_0_, greeting0_.message as message2_0_0_ from greetings greeting0_ where greeting0_.id=? [42102-200]
