@@ -31,6 +31,11 @@ public class GreetingController {
 		return greetingService.addGreeting(user);
 	}
 
+	@GetMapping(value = {"/{id}", "/home/{id}"})
+	public Greeting getGreeting(@PathVariable long id) {
+		return greetingService.getGreetingById(id);
+	}
+
 	@PostMapping("/post")
 	public String getGreeting(@RequestBody Greeting greeting) {
 		return "{\"id\":" + greeting.getId() + ",\"message\":" + "\""
