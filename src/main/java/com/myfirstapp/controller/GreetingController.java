@@ -20,14 +20,16 @@ import com.myfirstapp.service.IGreetingService;
 @RequestMapping("/greeting")
 public class GreetingController {
 	private static final String template = "Hello, %s!";
-	
+
 	@Autowired
 	private IGreetingService greetingService;
 
 	@GetMapping(value = { "", "/", "/home" })
-	public Greeting getGreeting(@RequestParam(value = "name", defaultValue = "World") String name) {
+	public Greeting getGreeting(@RequestParam(value = "fName", defaultValue = "") String firstName,
+			@RequestParam(value = "lName", defaultValue = "") String lastName) {
 		User user = new User();
-		user.setFirstName(name);
+		user.setFirstName(firstName);
+		user.setLastName(lastName);
 		return greetingService.addGreetingService(user);
 	}
 
